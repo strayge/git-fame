@@ -233,7 +233,7 @@ def run(args):
   auth_stats = {}
   for fname in tqdm(file_list, desc="Blame", disable=args.silent_progress,
                     unit="file"):
-    git_blame_cmd = git_cmd + ["blame", "--porcelain", branch, fname] + \
+    git_blame_cmd = git_cmd + ["blame", "--line-porcelain", branch, fname] + \
         since
     if args.ignore_whitespace:
       git_blame_cmd.append("-w")
